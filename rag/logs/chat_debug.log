@@ -1,0 +1,19 @@
+21:18:57 before_memory_init
+21:18:57 after_memory_init
+21:18:57 after_get_recent 0
+21:18:57 after_embedding_init
+21:21:43 after_encode_dense
+21:23:43 after_chat elapsed=500.0
+21:23:43 '您好，我是您的医生。请问您有什么具体的健康问题需要咨询吗？如果您有关于肝癌诊断、治疗或术前规划的问题，我可以根据您提供的知识内容为您解答。请告诉我您的具体情况或疑问。'
+21:24:30 after_encode_sparse non_empty=False
+21:24:30 after_milvus_init use_memory=False
+21:24:30 after_milvus_search 6
+21:24:30 after_reranker_init
+21:25:00 after_chat elapsed=500.73
+21:25:00 '您好，我是您的在线医疗咨询助手。请问您有什么健康或疾病方面的问题需要咨询？请尽量详细描述您的情况，例如症状、持续时间、既往病史等，我会根据专业知识为您提供参考建议。但请注意，我的回答不能替代线下医生的面对面诊疗。'
+21:27:16 after_rerank 3
+21:27:16 after_build_messages user_len=1233
+21:27:16 after_llm_init
+21:27:22 after_llm_chat '您好，看起来您分享的是一段关于肝癌筛查和病理诊断的专业医学内容。作为医生，我很乐意为您解读这些信息。\n\n您提供的资料主要涉及两部分：\n\n1. **推荐强度分级**：这是临床指南中常用的证据评价体系。您提到的“中度推荐”（B级）和“弱推荐”（'
+21:27:22 after_push_message
+21:27:22 after_set_ttl
