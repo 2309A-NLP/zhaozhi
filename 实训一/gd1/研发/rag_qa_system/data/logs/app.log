@@ -1,0 +1,238 @@
+2026-05-26 09:36:12,137 | INFO | sentence_transformers.SentenceTransformer | Use pytorch device_name: cpu
+2026-05-26 09:36:12,137 | INFO | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: C:\Users\Administrator\Desktop\rgzn\zg3\mx\m3e-base
+2026-05-26 09:36:12,476 | INFO | numexpr.utils | Note: NumExpr detected 20 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2026-05-26 09:36:12,476 | INFO | numexpr.utils | NumExpr defaulting to 8 threads.
+2026-05-26 09:36:45,512 | INFO | sentence_transformers.SentenceTransformer | Use pytorch device_name: cpu
+2026-05-26 09:36:45,512 | INFO | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: C:\Users\Administrator\Desktop\rgzn\zg3\mx\m3e-base
+2026-05-26 09:36:45,879 | INFO | numexpr.utils | Note: NumExpr detected 20 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2026-05-26 09:36:45,879 | INFO | numexpr.utils | NumExpr defaulting to 8 threads.
+2026-05-29 10:51:37,158 | INFO | datasets | PyTorch version 2.5.1+cu118 available.
+2026-05-29 10:51:37,976 | INFO | sentence_transformers.SentenceTransformer | Use pytorch device_name: cuda:0
+2026-05-29 10:51:37,976 | INFO | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: C:\Users\Administrator\Desktop\rgzn\zg3\mx\m3e-base
+2026-05-29 10:51:39,165 | INFO | rag.main | server_start | host=127.0.0.1 | port=8000
+2026-05-29 10:51:41,245 | INFO | rag.http | http_request | method=GET | path=/
+2026-05-29 10:51:41,319 | INFO | rag.http | http_request | method=GET | path=/styles.css
+2026-05-29 10:51:41,319 | INFO | rag.http | http_request | method=GET | path=/app.js
+2026-05-29 10:51:41,367 | INFO | rag.http | http_request | method=GET | path=/api/files
+2026-05-29 10:51:41,369 | INFO | rag.http | http_request | method=GET | path=/api/stats
+2026-05-29 10:51:54,133 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-29 10:51:55,902 | INFO | sentence_transformers.cross_encoder.CrossEncoder | Use pytorch device: cuda:0
+2026-05-29 10:52:04,730 | INFO | rag.answer | qa_success | question='武汉力源信息技术股份有限公司组织\n结构图中，销售部有几个部门构成，其中大客户销售部有几个\n北京八维信息集团\n人工智能 NLP 方向 任务工单\n5\n销售处构成？' | duration_ms=10544.7 | source_count=3 | answer='根据检索片段，武汉力源信息技术股份有限公司的销售部下设：电话及网络销售部、渠道销售部、大客户销售部、国际贸易部，以及珠海、深圳、北京、武汉、广州、成都等销售处。其中，大客户销售部没有下设销售处，而是由大客户销售部直接负责。'
+2026-05-29 10:52:08,790 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-29 10:52:15,506 | INFO | rag.answer | qa_success | question='"武汉力源信息技术股份有限公司组织\n结构图中，销售部有几个部门构成，其中大客户销售部有几个\n销售处构成？' | duration_ms=6690.45 | source_count=3 | answer='根据检索片段，武汉力源信息技术股份有限公司销售部由以下部门构成：渠道销售部、电话及网络销售部、大客户销售部、国际贸易部，以及珠海、深圳、北京、武汉、广州、成都等销售处。但片段中未明确说明大客户销售部由几个销售处构成，因此信息不足，无法回答。'
+2026-05-29 11:00:08,882 | INFO | datasets | PyTorch version 2.5.1+cu118 available.
+2026-05-29 11:00:09,525 | INFO | sentence_transformers.SentenceTransformer | Use pytorch device_name: cuda:0
+2026-05-29 11:00:09,525 | INFO | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: C:\Users\Administrator\Desktop\rgzn\zg3\mx\m3e-base
+2026-05-29 11:00:10,246 | INFO | rag.main | server_start | host=127.0.0.1 | port=8000
+2026-05-29 11:00:11,308 | INFO | rag.http | http_request | method=GET | path=/
+2026-05-29 11:00:11,382 | INFO | rag.http | http_request | method=GET | path=/styles.css
+2026-05-29 11:00:11,383 | INFO | rag.http | http_request | method=GET | path=/app.js
+2026-05-29 11:00:11,416 | INFO | rag.http | http_request | method=GET | path=/api/files
+2026-05-29 11:00:11,419 | INFO | rag.http | http_request | method=GET | path=/api/stats
+2026-05-29 11:00:11,436 | INFO | rag.http | http_request | method=GET | path=/favicon.ico
+2026-05-29 11:00:15,581 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-29 11:00:17,084 | INFO | sentence_transformers.cross_encoder.CrossEncoder | Use pytorch device: cuda:0
+2026-05-29 11:00:19,505 | INFO | rag.answer | qa_success | question='"武汉力源信息技术股份有限公司组织\n结构图中，销售部有几个部门构成，其中大客户销售部有几个\n销售处构成？"' | duration_ms=3903.73 | source_count=3 | answer='根据检索片段，武汉力源信息技术股份有限公司销售部由渠道销售部、电话及网络销售部、大客户销售部、国际贸易部构成（片段1）。大客户销售部下设的销售处包括珠海销售处、深圳销售处、北京销售处、武汉销售处、广州销售处、成都销售处（片段2），共6个销售处。'
+2026-05-29 11:16:24,370 | INFO | datasets | PyTorch version 2.5.1+cu118 available.
+2026-05-29 11:16:25,124 | INFO | sentence_transformers.SentenceTransformer | Use pytorch device_name: cuda:0
+2026-05-29 11:16:25,124 | INFO | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: C:\Users\Administrator\Desktop\rgzn\zg3\mx\m3e-base
+2026-05-29 11:16:26,240 | INFO | rag.main | server_start | host=127.0.0.1 | port=8000
+2026-05-29 11:16:27,166 | INFO | rag.http | http_request | method=GET | path=/
+2026-05-29 11:16:27,281 | INFO | rag.http | http_request | method=GET | path=/styles.css
+2026-05-29 11:16:27,281 | INFO | rag.http | http_request | method=GET | path=/app.js
+2026-05-29 11:16:27,317 | INFO | rag.http | http_request | method=GET | path=/api/files
+2026-05-29 11:16:27,319 | INFO | rag.http | http_request | method=GET | path=/api/stats
+2026-05-29 11:16:27,336 | INFO | rag.http | http_request | method=GET | path=/favicon.ico
+2026-05-29 11:16:32,326 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-29 11:16:34,150 | INFO | sentence_transformers.cross_encoder.CrossEncoder | Use pytorch device: cuda:0
+2026-05-29 11:16:38,188 | INFO | rag.answer | qa_success | question='八维' | duration_ms=5818.93 | source_count=3 | answer='根据检索到的片段，没有找到与“八维”相关的内容。信息不足，无法回答。'
+2026-05-29 11:20:08,743 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-29 11:20:10,741 | INFO | rag.answer | qa_success | question='武汉力源信息技术股份有限公司组织\n结构图中，销售部有几个部门构成，其中大客户销售部有几个\n销售处构成？' | duration_ms=1955.27 | source_count=3 | answer='根据检索到的片段，武汉力源信息技术股份有限公司的销售部下设渠道销售部、电话及网络销售部、大客户销售部、国际贸易部（片段1）。大客户销售部由珠海销售处、深圳销售处、北京销售处、武汉销售处、广州销售处、成都销售处共6个销售处构成（片段2）。'
+2026-05-29 11:20:20,622 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-29 11:20:22,292 | INFO | rag.answer | qa_success | question='武汉力源信息技术股份有限公司招股\n意向书中，从 2008 年中国 IC 市场应用结构与增长图中可以看\n出，增长率最快的是哪个行业？负增长的是哪个行业？' | duration_ms=1612.86 | source_count=3 | answer='根据检索到的片段，没有提供“2008年中国IC市场应用结构与增长图”的具体数据，因此无法判断增长率最快和负增长的行业。信息不足。'
+2026-05-29 11:20:34,948 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-29 11:20:36,766 | INFO | rag.answer | qa_success | question='武汉力源信息技术股份有限公司本次\n发行股数是多少，占发行后总股本的比例是多少？' | duration_ms=1783.89 | source_count=3 | answer='根据检索片段2，武汉力源信息技术股份有限公司本次发行股数为1,670万股，占发行后总股本的比例为25.04%。'
+2026-05-29 11:21:17,249 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-29 11:21:19,168 | INFO | rag.answer | qa_success | question='根据武汉兴图新科电子股份有限公司招股意向书，电子信息行业的上游涉及哪些行业？' | duration_ms=1890.44 | source_count=3 | answer='根据检索片段，电子信息行业的上游涉及信息系统相关的电子元器件制造企业，以及机箱、机柜等金属壳体制造企业。'
+2026-05-29 19:00:04,224 | INFO | datasets | PyTorch version 2.5.1+cu118 available.
+2026-05-29 19:00:06,151 | INFO | sentence_transformers.SentenceTransformer | Use pytorch device_name: cuda:0
+2026-05-29 19:00:06,151 | INFO | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: C:\Users\Administrator\Desktop\rgzn\zg3\mx\m3e-base
+2026-05-29 19:00:17,757 | ERROR | rag.main | application_failed
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\rgzn\rgzn\sx\sx1\gd\gd1\rag_qa_system\main.py", line 167, in main
+    run_server(host=host, port=port)
+  File "C:\Users\Administrator\Desktop\rgzn\rgzn\sx\sx1\gd\gd1\rag_qa_system\main.py", line 118, in run_server
+    api, config = build_api()
+  File "C:\Users\Administrator\Desktop\rgzn\rgzn\sx\sx1\gd\gd1\rag_qa_system\main.py", line 55, in build_api
+    milvus_repo = MilvusRepository(
+  File "<string>", line 7, in __init__
+  File "C:\Users\Administrator\Desktop\rgzn\rgzn\sx\sx1\gd\gd1\rag_qa_system\backend\repositories\milvus_repo.py", line 35, in __post_init__
+    self._connections.connect(alias="default", host=self.host, port=str(self.port))
+  File "D:\an10-1\envs\juese\lib\site-packages\pymilvus\orm\connections.py", line 439, in connect
+    connect_milvus(**kwargs, user=user, password=password, token=token, db_name=db_name)
+  File "D:\an10-1\envs\juese\lib\site-packages\pymilvus\orm\connections.py", line 391, in connect_milvus
+    raise e from e
+  File "D:\an10-1\envs\juese\lib\site-packages\pymilvus\orm\connections.py", line 385, in connect_milvus
+    gh._wait_for_channel_ready(timeout=timeout)
+  File "D:\an10-1\envs\juese\lib\site-packages\pymilvus\client\grpc_handler.py", line 229, in _wait_for_channel_ready
+    raise MilvusException(
+pymilvus.exceptions.MilvusException: <MilvusException: (code=2, message=Fail connecting to server on 127.0.0.1:19530, illegal connection params or server unavailable)>
+2026-05-29 19:00:46,332 | INFO | datasets | PyTorch version 2.5.1+cu118 available.
+2026-05-29 19:00:46,892 | INFO | sentence_transformers.SentenceTransformer | Use pytorch device_name: cuda:0
+2026-05-29 19:00:46,892 | INFO | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: C:\Users\Administrator\Desktop\rgzn\zg3\mx\m3e-base
+2026-05-29 19:00:57,727 | ERROR | rag.main | application_failed
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\rgzn\rgzn\sx\sx1\gd\gd1\rag_qa_system\main.py", line 167, in main
+    run_server(host=host, port=port)
+  File "C:\Users\Administrator\Desktop\rgzn\rgzn\sx\sx1\gd\gd1\rag_qa_system\main.py", line 118, in run_server
+    api, config = build_api()
+  File "C:\Users\Administrator\Desktop\rgzn\rgzn\sx\sx1\gd\gd1\rag_qa_system\main.py", line 55, in build_api
+    milvus_repo = MilvusRepository(
+  File "<string>", line 7, in __init__
+  File "C:\Users\Administrator\Desktop\rgzn\rgzn\sx\sx1\gd\gd1\rag_qa_system\backend\repositories\milvus_repo.py", line 35, in __post_init__
+    self._connections.connect(alias="default", host=self.host, port=str(self.port))
+  File "D:\an10-1\envs\juese\lib\site-packages\pymilvus\orm\connections.py", line 439, in connect
+    connect_milvus(**kwargs, user=user, password=password, token=token, db_name=db_name)
+  File "D:\an10-1\envs\juese\lib\site-packages\pymilvus\orm\connections.py", line 391, in connect_milvus
+    raise e from e
+  File "D:\an10-1\envs\juese\lib\site-packages\pymilvus\orm\connections.py", line 385, in connect_milvus
+    gh._wait_for_channel_ready(timeout=timeout)
+  File "D:\an10-1\envs\juese\lib\site-packages\pymilvus\client\grpc_handler.py", line 229, in _wait_for_channel_ready
+    raise MilvusException(
+pymilvus.exceptions.MilvusException: <MilvusException: (code=2, message=Fail connecting to server on 127.0.0.1:19530, illegal connection params or server unavailable)>
+2026-05-29 19:04:50,643 | INFO | datasets | PyTorch version 2.5.1+cu118 available.
+2026-05-29 19:04:51,429 | INFO | sentence_transformers.SentenceTransformer | Use pytorch device_name: cuda:0
+2026-05-29 19:04:51,429 | INFO | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: C:\Users\Administrator\Desktop\rgzn\zg3\mx\m3e-base
+2026-05-29 19:04:52,592 | INFO | rag.main | server_start | host=127.0.0.1 | port=8000
+2026-05-29 19:04:55,567 | INFO | rag.http | http_request | method=GET | path=/
+2026-05-29 19:04:55,625 | INFO | rag.http | http_request | method=GET | path=/styles.css
+2026-05-29 19:04:55,626 | INFO | rag.http | http_request | method=GET | path=/app.js
+2026-05-29 19:04:55,683 | INFO | rag.http | http_request | method=GET | path=/api/files
+2026-05-29 19:04:55,685 | INFO | rag.http | http_request | method=GET | path=/api/stats
+2026-05-29 19:04:55,698 | INFO | rag.http | http_request | method=GET | path=/favicon.ico
+2026-05-29 19:06:14,962 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-29 19:06:16,932 | INFO | sentence_transformers.cross_encoder.CrossEncoder | Use pytorch device: cuda:0
+2026-05-29 19:06:22,166 | INFO | rag.answer | qa_success | question='报告期内，武汉兴图新科电子股份有\n限公司来自军用领域的收入分别是多少？' | duration_ms=7112.31 | source_count=3 | answer='根据检索片段，武汉兴图新科电子股份有限公司报告期内来自军用领域的收入包括直接军方和间接军方（总体单位、系统集成单位）两部分。具体数据如下：\n\n- 2016年：直接军方3,433.34万元，间接军方3,?（片段未完整显示，无法提供具体数值）\n- 2017年：直接军方6,277.49万元，间接军方8,136.66万元\n- 2018年：直接军方5,611.52万元，间接军方13,169.15万元\n\n由于2016年间接军方数据在片段中不完整，无法给出该年军用领域总收入。'
+2026-05-29 19:06:48,407 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-29 19:06:49,954 | INFO | rag.answer | qa_success | question='武汉兴图新科电子股份有限公司参与\n制定了哪个技术标准？' | duration_ms=1508.56 | source_count=3 | answer='根据检索到的片段，未提及武汉兴图新科电子股份有限公司参与制定了哪个技术标准，信息不足。'
+2026-05-29 19:29:36,929 | INFO | datasets | PyTorch version 2.5.1+cu118 available.
+2026-05-29 19:29:38,891 | INFO | sentence_transformers.SentenceTransformer | Use pytorch device_name: cuda:0
+2026-05-29 19:29:38,892 | INFO | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: C:\Users\Administrator\Desktop\rgzn\zg3\mx\m3e-base
+2026-05-29 19:29:40,271 | INFO | rag.main | server_start | host=127.0.0.1 | port=8000
+2026-05-29 19:29:41,512 | INFO | rag.http | http_request | method=GET | path=/
+2026-05-29 19:29:41,552 | INFO | rag.http | http_request | method=GET | path=/app.js
+2026-05-29 19:29:41,552 | INFO | rag.http | http_request | method=GET | path=/styles.css
+2026-05-29 19:29:41,573 | INFO | rag.http | http_request | method=GET | path=/api/files
+2026-05-29 19:29:41,576 | INFO | rag.http | http_request | method=GET | path=/api/stats
+2026-05-29 19:29:41,621 | INFO | rag.http | http_request | method=GET | path=/favicon.ico
+2026-05-29 19:29:55,876 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-29 19:29:57,820 | INFO | rag.answer | qa_success | question='报告期内，武汉兴图新科电子股份有\n限公司来自军用领域的收入分别是多少？' | duration_ms=1897.09 | source_count=3 | answer='根据检索片段，武汉兴图新科电子股份有限公司报告期内的军用领域收入（包括直接军方和间接军方）如下：\n\n- **2016年度**：直接军方3,433.34万元，间接军方（片段未完整显示，但结合上下文为3,?万元，信息不足）  \n- **2017年度**：直接军方6,277.49万元，间接军方8,136.66万元  \n- **2018年度**：直接军方5,611.52万元，间接军方13,169.15万元  \n\n由于片段中2016年间接军方数据不完整，无法提供该年完整总和。'
+2026-05-31 18:41:56,408 | INFO | datasets | PyTorch version 2.5.1+cu118 available.
+2026-05-31 18:41:58,286 | INFO | sentence_transformers.SentenceTransformer | Use pytorch device_name: cuda:0
+2026-05-31 18:41:58,286 | INFO | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: C:\Users\Administrator\Desktop\rgzn\zg3\mx\m3e-base
+2026-05-31 18:41:59,688 | INFO | rag.main | server_start | host=127.0.0.1 | port=8000
+2026-05-31 18:42:04,812 | INFO | rag.http | http_request | method=GET | path=/
+2026-05-31 18:42:04,841 | INFO | rag.http | http_request | method=GET | path=/styles.css
+2026-05-31 18:42:04,843 | INFO | rag.http | http_request | method=GET | path=/app.js
+2026-05-31 18:42:04,894 | INFO | rag.http | http_request | method=GET | path=/api/files
+2026-05-31 18:42:04,897 | INFO | rag.http | http_request | method=GET | path=/api/stats
+2026-05-31 18:42:04,916 | INFO | rag.http | http_request | method=GET | path=/favicon.ico
+2026-05-31 18:42:28,405 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-31 18:42:30,365 | INFO | sentence_transformers.cross_encoder.CrossEncoder | Use pytorch device: cuda:0
+2026-05-31 18:42:36,424 | INFO | rag.answer | qa_success | question='报告期内，武汉兴图新科电子股份有\n限公司来自军用领域的收入分别是多少？' | duration_ms=7944.37 | source_count=3 | answer='根据检索片段，武汉兴图新科电子股份有限公司报告期内来自军用领域的收入情况如下：\n\n- 2016年：直接军方收入3,433.34万元，间接军方收入3,?万元（片段1中数据不完整，仅显示“3”）；  \n- 2017年：直接军方收入6,277.49万元，间接军方收入8,136.66万元；  \n- 2018年：直接军方收入5,611.52万元，间接军方收入13,169.15万元。  \n\n注意：2016年间接军方收入因片段截断无法获取完整数值，信息不足。军用领域收入为直接军方与间接军方收入之和。'
+2026-05-31 18:42:49,642 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-31 18:42:54,168 | INFO | rag.answer | qa_success | question='武汉兴图新科电子股份有限公司参与\n制定了哪个技术标准？' | duration_ms=4482.63 | source_count=3 | answer='根据检索片段，武汉兴图新科电子股份有限公司自主研发的视频编解码器支持最新的H.265国际标准、AVS2国家标准和JAVS军用国家标准，但片段中未提及该公司参与制定了哪个技术标准。'
+2026-05-31 18:43:04,832 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-31 18:43:06,494 | INFO | rag.answer | qa_success | question='报告期内，武汉兴图新科电子股份有\n限公司来自军用领域的收入占主营业务收入的比重分别是多\n少？' | duration_ms=1625.91 | source_count=3 | answer='根据检索片段，武汉兴图新科电子股份有限公司报告期内来自军用领域的收入占主营业务收入的比重如下：\n\n- 2016年：直接军方占比43.61%，间接军方占比未完整显示，但合计军用收入占比超过43.61%。\n- 2017年：直接军方占比42.38%，间接军方占比54.93%，合计约97.31%。\n- 2018年：直接军方占比28.34%，间接军方占比66.50%，合计约94.84%。\n\n（数据来源：片段2）'
+2026-05-31 18:43:15,372 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-31 18:43:17,363 | INFO | rag.answer | qa_success | question='根据武汉兴图新科电子股份有限公司\n招股意向书，电子信息行业的上游涉及哪些企业？' | duration_ms=1945.5 | source_count=3 | answer='根据检索到的片段，未提及电子信息行业的上游涉及哪些企业。信息不足，无法回答。'
+2026-05-31 18:43:35,013 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-31 18:43:36,500 | INFO | rag.answer | qa_success | question='武汉兴图新科电子股份有限公司在\n哪个领域已经成为重要供应商？' | duration_ms=1451.64 | source_count=3 | answer='根据检索片段，武汉兴图新科电子股份有限公司在**军队领域**已成为重要供应商。片段1提到“巩固并进一步扩大企业在军队领域的品牌知名度和营销与服务覆盖范围”，片段2也指出公司“不断积累军方客户”并“巩固、扩大军队市场占有率”。'
+2026-05-31 18:43:45,580 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-31 18:43:46,906 | INFO | rag.answer | qa_success | question='根据武汉兴图新科电子股份有限公\n司招股意向书，电子信息行业的下游主要包括哪些行业？' | duration_ms=1278.02 | source_count=3 | answer='根据检索片段，电子信息行业的下游主要包括军队、政府机关、能源等行业企业（片段1）。'
+2026-05-31 18:43:57,251 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-31 18:43:58,617 | INFO | rag.answer | qa_success | question='武汉兴图新科电子股份有限公司参\n与的哪个工程荣获了国家科技进步一等奖？' | duration_ms=1323.56 | source_count=3 | answer='根据检索片段，武汉兴图新科电子股份有限公司参与的“某情报、指挥、控制与通信网络一体化工程”（相当于美军的C4ISR系统）荣获了国家科技进步一等奖。'
+2026-05-31 18:44:10,894 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-31 18:44:12,310 | INFO | rag.answer | qa_success | question='武汉兴图新科电子股份有限公司注册资本是多少？' | duration_ms=1396.7 | source_count=3 | answer='根据检索片段，武汉兴图新科电子股份有限公司（兴图新科）在2018年第三次临时股东大会后，注册资本增加至**5,520万元**（片段2）。'
+2026-05-31 18:44:18,821 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-31 18:44:20,376 | INFO | rag.answer | qa_success | question='武汉兴图新科电子股份有限公司法\n定代表人是谁？' | duration_ms=1475.0 | source_count=3 | answer='根据检索片段，武汉兴图新科电子股份有限公司的董事长、总经理为程家明，但未明确提及法定代表人信息，因此无法确认法定代表人是谁。'
+2026-05-31 18:44:28,191 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-31 18:44:29,760 | INFO | rag.answer | qa_success | question='武汉兴图新科电子股份有限公司计\n划使用本次发行募集资金的多少用于补充流动资金？' | duration_ms=1534.37 | source_count=3 | answer='根据检索片段，武汉兴图新科电子股份有限公司计划使用本次发行募集资金补充流动资金，但片段中未明确具体金额。信息不足，无法提供精确数字。'
+2026-05-31 18:45:47,822 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-31 18:45:49,512 | INFO | rag.answer | qa_success | question='根据武汉兴图新科电子股份有限公司\n招股意向书，电子信息行业的上游涉及哪些企业？' | duration_ms=1658.03 | source_count=3 | answer='根据提供的检索片段，未能找到关于电子信息行业上游涉及哪些企业的信息。片段主要讨论了行业季节性、技术壁垒、政策背景和风险提示，未提及上游企业具体内容。'
+2026-05-31 18:47:24,418 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-31 18:47:26,143 | INFO | rag.answer | qa_success | question='武汉力源信息技术股份有限公司组织\n结构图中，销售部有几个部门构成，其中大客户销售部有几个\n销售处构成？' | duration_ms=1680.88 | source_count=3 | answer='根据检索片段，武汉力源信息技术股份有限公司销售部下设渠道销售部、电话及网络销售部、大客户销售部、国际贸易部（片段1）。大客户销售部下设珠海、深圳、北京、武汉、广州、成都等销售处（片段2）。因此，销售部由4个部门构成，大客户销售部由6个销售处构成。'
+2026-05-31 18:47:33,555 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-31 18:47:35,245 | INFO | rag.answer | qa_success | question='武汉力源信息技术股份有限公司招股\n意向书中，从 2008 年中国 IC 市场应用结构与增长图中可以看\n出，增长率最快的是哪个行业？负增长的是哪个行业？' | duration_ms=1651.34 | source_count=3 | answer='根据检索片段，无法直接获取“2008年中国IC市场应用结构与增长图”的具体数据，因此无法确定增长率最快和负增长的行业。信息不足。'
+2026-05-31 18:47:43,364 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-31 18:47:44,912 | INFO | rag.answer | qa_success | question='武汉力源信息技术股份有限公司本次\n发行股数是多少，占发行后总股本的比例是多少？' | duration_ms=1514.74 | source_count=3 | answer='根据检索片段，武汉力源信息技术股份有限公司本次发行股数为 **1,670 万股**，占发行后总股本的比例为 **25.04%**（片段2）。'
+2026-05-31 18:47:52,736 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-31 18:47:54,575 | INFO | rag.answer | qa_success | question='武汉力源信息技术股份有限公司本次\n募集资金拟投资哪些项目？' | duration_ms=1804.2 | source_count=3 | answer='根据检索片段，武汉力源信息技术股份有限公司本次募集资金拟投资以下项目：\n\n1. **仓储及物流中心**（项目总投资3,393.40万元）\n2. **研发中心**（项目总投资1,526.38万元）\n3. **电子商务平台**（项目总投资2,492.78万元）\n4. **扩充产品种类和数量**（项目总投资9,000.00万元）\n5. **其他与主营业务相关的营运资金**（金额未明确）\n\n（依据片段1）'
+2026-05-31 18:48:03,398 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-31 18:48:05,385 | INFO | rag.answer | qa_success | question='与武汉力源信息技术股份有限公司存\n在控制关系的关联方是谁，持股比例和本公司关系是什么' | duration_ms=1963.96 | source_count=3 | answer='根据检索到的片段，与武汉力源信息技术股份有限公司存在控制关系的关联方是赵马克（Mark Zhao），他是本公司控股股东。但片段中未明确说明其持股比例及与公司的具体关系。'
+2026-05-31 18:48:13,133 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-31 18:48:15,076 | INFO | rag.answer | qa_success | question='与武汉力源信息技术股份有限公司不\n存在控制关系的关联方企业有哪些？' | duration_ms=1919.53 | source_count=3 | answer='根据检索片段，与武汉力源信息技术股份有限公司不存在控制关系的关联方企业包括：**上海博润**、**听音投资**、**联众聚源**（均为持有公司股份5%以上的股东），以及**力源贸易**（同一实际控制人控制的企业）、**普芯达**（实际控制人近亲属控制的公司）[片段1]。此外，**佰力电子**和**盈硅电子**曾为关联方，但已于2008年对外转让，目前不存在关联关系[片段1]。'
+2026-05-31 18:48:21,816 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-31 18:48:23,810 | INFO | rag.answer | qa_success | question='报告期内，武汉兴图新科电子股份有\n限公司来自军用领域的收入分别是多少？' | duration_ms=1962.52 | source_count=3 | answer='根据提供的检索片段，没有找到关于“武汉兴图新科电子股份有限公司”的信息。片段内容涉及的是“武汉力源信息技术股份有限公司”的收入结构，无法回答用户问题。'
+2026-05-31 18:48:40,950 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-31 18:48:42,359 | INFO | rag.answer | qa_success | question='武汉兴图新科电子股份有限公司参与\n制定了哪个技术标准？' | duration_ms=1368.1 | source_count=0 | answer='根据现有知识库，未检索到任何相关信息，因此无法回答武汉兴图新科电子股份有限公司参与制定了哪个技术标准。'
+2026-05-31 18:48:46,246 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-31 18:48:47,221 | INFO | rag.answer | qa_success | question='武汉兴图新科电子股份有限公司参与\n制定了哪个技术标准？' | duration_ms=954.17 | source_count=0 | answer='根据提供的检索片段，未检索到任何相关信息，因此无法回答武汉兴图新科电子股份有限公司参与制定了哪个技术标准。'
+2026-05-31 18:48:58,807 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-31 18:49:01,515 | INFO | rag.answer | qa_success | question='报告期内，武汉兴图新科电子股份有\n限公司来自军用领域的收入占主营业务收入的比重分别是多\n少？' | duration_ms=2685.82 | source_count=3 | answer='根据提供的检索片段，无法找到“武汉兴图新科电子股份有限公司”的相关信息。片段内容涉及的是“武汉力源信息技术股份有限公司”的收入结构，包括电话/网络销售、渠道销售和大客户销售等模式，以及微控制器器件等产品的销售占比。因此，无法回答用户关于武汉兴图新科电子股份有限公司军用领域收入占比的问题。'
+2026-05-31 18:49:16,241 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-31 18:49:18,213 | INFO | rag.answer | qa_success | question='根据武汉兴图新科电子股份有限公司\n招股意向书，电子信息行业的上游涉及哪些企业？' | duration_ms=1933.67 | source_count=3 | answer='根据提供的检索片段，未找到“武汉兴图新科电子股份有限公司”的招股意向书内容。片段中涉及的是“武汉力源信息技术股份有限公司”的招股说明书，其中提到通信接口器件的上游制造商包括Intersil、TI、ON、ST等（片段1）。因此，无法回答关于武汉兴图新科电子股份有限公司的问题，信息不足。'
+2026-05-31 18:49:34,519 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-31 18:49:35,766 | INFO | rag.answer | qa_success | question='武汉兴图新科电子股份有限公司在\n哪个领域已经成为重要供应商？' | duration_ms=1199.01 | source_count=0 | answer='抱歉，根据检索结果，未找到任何相关信息，无法回答武汉兴图新科电子股份有限公司在哪个领域已成为重要供应商。建议您提供更多背景或查询具体资料。'
+2026-05-31 18:49:42,143 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-31 18:49:43,639 | INFO | rag.answer | qa_success | question='根据武汉兴图新科电子股份有限公\n司招股意向书，电子信息行业的下游主要包括哪些行业？' | duration_ms=1462.82 | source_count=0 | answer='根据提供的检索片段，未检索到任何相关信息，因此无法回答武汉兴图新科电子股份有限公司招股意向书中关于电子信息行业下游包括哪些行业的问题。信息不足，请提供更多资料。'
+2026-05-31 18:49:50,054 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-31 18:49:51,287 | INFO | rag.answer | qa_success | question='武汉兴图新科电子股份有限公司参\n与的哪个工程荣获了国家科技进步一等奖？' | duration_ms=1214.0 | source_count=0 | answer='抱歉，根据现有信息，我无法回答您的问题。知识库中未检索到任何相关片段，因此无法确认武汉兴图新科电子股份有限公司参与的具体工程是否获得国家科技进步一等奖。建议您提供更多信息或查阅其他可靠来源。'
+2026-05-31 18:50:02,068 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-31 18:50:03,687 | INFO | rag.answer | qa_success | question='武汉兴图新科电子股份有限公司注册资本是多少？' | duration_ms=1581.8 | source_count=3 | answer='根据检索到的片段，无法找到武汉兴图新科电子股份有限公司的注册资本信息。片段中提及的是武汉力源信息技术股份有限公司的注册资本情况，与问题无关。'
+2026-05-31 18:50:47,590 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-31 18:50:49,617 | INFO | rag.answer | qa_success | question='武汉兴图新科电子股份有限公司参与\n制定了哪个技术标准？' | duration_ms=1999.96 | source_count=3 | answer='根据检索到的片段，武汉兴图新科电子股份有限公司自主研发的视频编解码器支持最新的H.265国际标准、AVS2国家标准和JAVS军用国家标准，但片段中未提及公司参与制定了这些标准。信息不足以支持结论。'
+2026-05-31 18:51:16,749 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-31 18:51:18,511 | INFO | rag.answer | qa_success | question='报告期内，武汉兴图新科电子股份有\n限公司来自军用领域的收入分别是多少？' | duration_ms=1732.2 | source_count=3 | answer='根据检索片段，报告期内公司主营业务收入来源于直接销售，直销对象包括直接军方、间接军方和民品客户。其中，2018年度直接军方收入5,611.52万元，间接军方收入13,169.15万元；2017年度直接军方收入6,277.49万元，间接军方收入8,136.66万元；2016年度直接军方收入3,433.34万元，间接军方收入3,?万元（片段1中该数据不完整）。因此，来自军用领域（直接军方加间接军方）的收入分别为：2016年约6,?万元（因数据缺失无法精确计算），2017年14,414.15万元，2018年18,780.67万元。'
+2026-05-31 18:51:39,006 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-31 18:51:40,153 | INFO | rag.answer | qa_success | question='武汉兴图新科电子股份有限公司注册资本是多少？' | duration_ms=1114.86 | source_count=3 | answer='根据检索片段，武汉兴图新科电子股份有限公司的注册资本为**5,520万元**（片段2）。'
+2026-05-31 18:51:48,921 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-31 18:51:49,907 | INFO | rag.answer | qa_success | question='武汉兴图新科电子股份有限公司参\n与的哪个工程荣获了国家科技进步一等奖？' | duration_ms=950.03 | source_count=3 | answer='根据检索片段，武汉兴图新科电子股份有限公司参与的“某情报、指挥、控制与通信网络一体化工程”（相当于美军的C4ISR系统）荣获了国家科技进步一等奖。'
+2026-05-31 18:52:00,501 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-31 18:52:03,416 | INFO | rag.answer | qa_success | question='根据武汉兴图新科电子股份有限公\n司招股意向书，电子信息行业的下游主要包括哪些行业？' | duration_ms=2896.18 | source_count=3 | answer='根据检索片段，电子信息行业的下游主要包括军队、政府机关、能源等行业企业（片段1）。'
+2026-05-31 18:52:21,758 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-31 18:52:23,929 | INFO | rag.answer | qa_success | question='武汉兴图新科电子股份有限公司在\n哪个领域已经成为重要供应商？' | duration_ms=2148.18 | source_count=3 | answer='根据检索片段，武汉兴图新科电子股份有限公司在**军队领域**已成为重要供应商。片段1提到“巩固并进一步扩大企业在军队领域的品牌知名度”，片段2指出“公司在不断积累军方客户的基础上”，片段3说明“军品订单较为稳定且持久”且“军方供应商体系会在较长时期内保持相对稳定状态”，均表明其在军队领域的供应商地位。'
+2026-05-31 18:52:36,135 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-31 18:52:38,728 | INFO | rag.answer | qa_success | question='报告期内，武汉兴图新科电子股份有\n限公司来自军用领域的收入占主营业务收入的比重分别是多\n少？' | duration_ms=2558.17 | source_count=3 | answer='根据检索片段，武汉兴图新科电子股份有限公司报告期内来自军用领域的收入（包括直接军方和间接军方）占主营业务收入的比重如下：\n\n- 2016年：直接军方43.61% + 间接军方（未明确列出，但根据片段2，2016年间接军方收入占比为片段缺失部分，结合上下文推断）——实际片段2中2016年间接军方占比未完整显示，但2018年间接军方66.50%、2017年54.93%，2016年数据不足。  \n- 2017年：直接军方42.38% + 间接军方54.93% = 97.31%（片段2）。  \n- 2018年：直接军方28.34% + 间接军方66.50% = 94.84%（片段2）。\n\n2016年间接军方占比在片段2中未完整给出，因此无法精确计算2016年军用领域总收入占比。信息不足。'
+2026-06-01 08:16:06,600 | INFO | datasets | PyTorch version 2.5.1+cu118 available.
+2026-06-01 08:16:07,354 | INFO | sentence_transformers.SentenceTransformer | Use pytorch device_name: cuda:0
+2026-06-01 08:16:07,354 | INFO | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: C:\Users\Administrator\Desktop\rgzn\zg3\mx\m3e-base
+2026-06-01 08:16:08,465 | INFO | rag.main | server_start | host=127.0.0.1 | port=8000
+2026-06-01 08:16:09,459 | INFO | rag.http | http_request | method=GET | path=/
+2026-06-01 08:16:09,581 | INFO | rag.http | http_request | method=GET | path=/styles.css
+2026-06-01 08:16:09,581 | INFO | rag.http | http_request | method=GET | path=/app.js
+2026-06-01 08:16:09,633 | INFO | rag.http | http_request | method=GET | path=/api/files
+2026-06-01 08:16:09,636 | INFO | rag.http | http_request | method=GET | path=/api/stats
+2026-06-01 08:16:19,928 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-06-01 08:16:21,325 | INFO | rag.answer | qa_success | question='"武汉力源信息技术股份有限公司组织\n结构图中，销售部有几个部门构成，其中大客户销售部有几个\n销售处构成？' | duration_ms=1376.15 | source_count=0 | answer='根据提供的检索片段，未检索到任何相关信息，因此无法回答武汉力源信息技术股份有限公司组织结构图中销售部的部门构成及大客户销售部的销售处数量。信息不足，请补充相关资料。'
+2026-06-01 08:16:31,787 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-06-01 08:16:33,219 | INFO | sentence_transformers.cross_encoder.CrossEncoder | Use pytorch device: cuda:0
+2026-06-01 08:16:36,898 | INFO | rag.answer | qa_success | question='"武汉力源信息技术股份有限公司组织\n结构图中，销售部有几个部门构成，其中大客户销售部有几个\n销售处构成？' | duration_ms=5070.5 | source_count=3 | answer='根据检索片段，武汉力源信息技术股份有限公司销售部下设的部门包括：渠道销售部、电话及网络销售部、大客户销售部、国际贸易部，以及珠海、深圳、北京、武汉、广州、成都等销售处。但片段中未明确说明大客户销售部具体由几个销售处构成，因此信息不足，无法回答该问题。'
+2026-06-01 08:16:51,968 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-06-01 08:16:53,374 | INFO | rag.answer | qa_success | question='报告期内，武汉兴图新科电子股份有\n限公司来自军用领域的收入分别是多少' | duration_ms=1381.46 | source_count=3 | answer='根据提供的检索片段，内容涉及的是“武汉力源信息技术股份有限公司”的财务数据，并未包含“武汉兴图新科电子股份有限公司”的信息。因此，无法回答该公司来自军用领域的收入情况。'
+2026-06-01 08:17:00,726 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-06-01 08:17:02,923 | INFO | rag.answer | qa_success | question='报告期内，武汉兴图新科电子股份有\n限公司来自军用领域的收入分别是多少' | duration_ms=2169.14 | source_count=3 | answer='根据检索片段，武汉兴图新科电子股份有限公司报告期内的收入按客户类型（直接军方、间接军方、民品客户）划分，但片段中未直接列出“军用领域”的总收入，仅提供了部分年份的直销数据。例如，2018年直接军方收入5,611.52万元（占比28.34%），间接军方收入13,169.15万元（占比66.50%）；2017年直接军方收入6,277.49万元（占比42.38%），间接军方收入8,136.66万元（占比54.93%）；2016年直接军方收入3,433.34万元（占比43.61%）。信息不足以支持完整回答军用领域总收入。'
+2026-06-01 08:17:10,699 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-06-01 08:17:12,142 | INFO | rag.answer | qa_success | question='武汉兴图新科电子股份有限公司法\n定代表人是谁？' | duration_ms=1411.3 | source_count=3 | answer='根据检索片段，未找到关于武汉兴图新科电子股份有限公司法定代表人的信息。片段中提及董事长、总经理为程家明，但未明确说明法定代表人身份。信息不足，无法回答。'
+2026-06-01 09:00:21,256 | INFO | datasets | PyTorch version 2.5.1+cu118 available.
+2026-06-01 09:00:21,837 | INFO | sentence_transformers.SentenceTransformer | Use pytorch device_name: cuda:0
+2026-06-01 09:00:21,838 | INFO | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: C:\Users\Administrator\Desktop\rgzn\zg3\mx\m3e-base
+2026-06-01 09:00:22,536 | INFO | rag.main | server_start | host=127.0.0.1 | port=8000
+2026-06-01 09:00:24,157 | INFO | rag.http | http_request | method=GET | path=/
+2026-06-01 09:00:24,199 | INFO | rag.http | http_request | method=GET | path=/styles.css
+2026-06-01 09:00:24,200 | INFO | rag.http | http_request | method=GET | path=/app.js
+2026-06-01 09:00:24,206 | INFO | rag.http | http_request | method=GET | path=/api/files
+2026-06-01 09:00:24,208 | INFO | rag.http | http_request | method=GET | path=/api/stats
+2026-06-01 09:00:32,898 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-06-01 09:00:34,267 | INFO | sentence_transformers.cross_encoder.CrossEncoder | Use pytorch device: cuda:0
+2026-06-01 09:00:36,641 | INFO | rag.answer | qa_success | question='与武汉力源信息技术股份有限公司存\n在控制关系的关联方是谁，持股比例和本公司关系是什么' | duration_ms=3705.01 | source_count=3 | answer='根据检索片段，与武汉力源信息技术股份有限公司存在控制关系的关联方是赵马克（Mark Zhao）。片段1显示赵马克持有佰力电子90%的股权，片段2和片段3均提及赵马克为本公司控股股东。但片段中未明确列出赵马克对武汉力源信息技术股份有限公司的具体持股比例，因此无法提供精确的持股数据。'

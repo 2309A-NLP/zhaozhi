@@ -1,0 +1,39 @@
+2026-05-26 09:36:12,137 | INFO | sentence_transformers.SentenceTransformer | Use pytorch device_name: cpu
+2026-05-26 09:36:12,137 | INFO | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: C:\Users\Administrator\Desktop\rgzn\zg3\mx\m3e-base
+2026-05-26 09:36:12,476 | INFO | numexpr.utils | Note: NumExpr detected 20 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2026-05-26 09:36:12,476 | INFO | numexpr.utils | NumExpr defaulting to 8 threads.
+2026-05-26 09:36:45,512 | INFO | sentence_transformers.SentenceTransformer | Use pytorch device_name: cpu
+2026-05-26 09:36:45,512 | INFO | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: C:\Users\Administrator\Desktop\rgzn\zg3\mx\m3e-base
+2026-05-26 09:36:45,879 | INFO | numexpr.utils | Note: NumExpr detected 20 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2026-05-26 09:36:45,879 | INFO | numexpr.utils | NumExpr defaulting to 8 threads.
+2026-05-26 18:37:48,584 | INFO | datasets | PyTorch version 2.5.1+cu118 available.
+2026-05-26 18:37:49,509 | INFO | sentence_transformers.SentenceTransformer | Use pytorch device_name: cuda:0
+2026-05-26 18:37:49,509 | INFO | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: C:\Users\Administrator\Desktop\rgzn\zg3\mx\m3e-base
+2026-05-26 18:37:51,293 | INFO | rag.main | server_start | host=127.0.0.1 | port=8000
+2026-05-26 18:38:02,786 | INFO | rag.http | http_request | method=GET | path=/
+2026-05-26 18:38:02,917 | INFO | rag.http | http_request | method=GET | path=/styles.css
+2026-05-26 18:38:02,917 | INFO | rag.http | http_request | method=GET | path=/app.js
+2026-05-26 18:38:02,980 | INFO | rag.http | http_request | method=GET | path=/api/conversation
+2026-05-26 18:38:02,982 | INFO | rag.http | http_request | method=GET | path=/api/stats
+2026-05-26 18:38:02,994 | INFO | rag.http | http_request | method=GET | path=/api/files
+2026-05-26 18:38:02,997 | INFO | rag.http | http_request | method=GET | path=/favicon.ico
+2026-05-26 18:38:38,669 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-26 18:38:40,651 | INFO | sentence_transformers.cross_encoder.CrossEncoder | Use pytorch device: cuda:0
+2026-05-26 18:38:45,333 | INFO | rag.answer | qa_success | session_id=52d87a42e61c47ec937dc183c06e0e0a | question='报告期内，武汉兴图新科电子股份有限公司来自军用\n领域的收入分别是多少' | duration_ms=6660.97 | source_count=3
+2026-05-26 18:38:50,692 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-26 18:38:52,328 | INFO | rag.answer | qa_success | session_id=52d87a42e61c47ec937dc183c06e0e0a | question='他参与的哪个工程荣获了国家科技进步一等奖' | duration_ms=1632.44 | source_count=3
+2026-05-26 18:39:14,397 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-26 18:39:16,603 | INFO | rag.answer | qa_success | session_id=52d87a42e61c47ec937dc183c06e0e0a | question='这个公司的法定代表人是谁' | duration_ms=2203.69 | source_count=3
+2026-05-28 22:15:51,978 | INFO | datasets | PyTorch version 2.5.1+cu118 available.
+2026-05-28 22:15:52,600 | INFO | sentence_transformers.SentenceTransformer | Use pytorch device_name: cuda:0
+2026-05-28 22:15:52,600 | INFO | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: C:\Users\Administrator\Desktop\rgzn\zg3\mx\m3e-base
+2026-05-28 22:15:53,340 | INFO | rag.main | server_start | host=127.0.0.1 | port=8000
+2026-05-28 22:15:54,603 | INFO | rag.http | http_request | method=GET | path=/
+2026-05-28 22:15:54,684 | INFO | rag.http | http_request | method=GET | path=/styles.css
+2026-05-28 22:15:54,684 | INFO | rag.http | http_request | method=GET | path=/app.js
+2026-05-28 22:15:54,738 | INFO | rag.http | http_request | method=GET | path=/api/files
+2026-05-28 22:15:54,740 | INFO | rag.http | http_request | method=GET | path=/api/stats
+2026-05-28 22:15:54,754 | INFO | rag.http | http_request | method=GET | path=/api/conversation
+2026-05-28 22:15:54,757 | INFO | rag.http | http_request | method=GET | path=/favicon.ico
+2026-05-28 22:15:57,985 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-28 22:15:59,137 | INFO | rag.answer | qa_success | session_id=52d87a42e61c47ec937dc183c06e0e0a | question='武汉力源信息技术股份有限公司组织\n结构图中，销售部有几个部门构成，其中大客户销售部有几个\n销售处构成？' | duration_ms=1148.51 | source_count=3

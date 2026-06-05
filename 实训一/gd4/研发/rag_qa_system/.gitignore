@@ -1,0 +1,14 @@
+.env
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+data/logs/
+data/uploads/
+data/*.json
+data/*.broken
+
+*.log
+*.tmp
+*.bak

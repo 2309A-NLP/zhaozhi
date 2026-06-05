@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RAG PDF Chat</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <p class="eyebrow">RAG PDF CHAT</p>
+      <h1>PDF Knowledge Chat</h1>
+      <p class="hero-copy">Import a PDF into the knowledge base, then ask questions in chat mode. The backend API stays unchanged.</p>
+    </section>
+
+    <section class="layout">
+      <aside class="sidebar">
+        <div class="card">
+          <h2>Knowledge Import</h2>
+          <label class="field-label" for="pdf-select">Available PDFs</label>
+          <select id="pdf-select"></select>
+          <button id="ingest-path-btn" class="primary">Import Selected PDF</button>
+
+          <div class="divider"></div>
+
+          <label class="field-label" for="pdf-upload">Upload New PDF</label>
+          <input id="pdf-upload" type="file" accept=".pdf">
+          <button id="upload-btn">Upload and Import</button>
+        </div>
+
+        <div class="card">
+          <h2>Knowledge Status</h2>
+          <div id="stats" class="stats"></div>
+          <pre id="ingest-result" class="result-box compact">Waiting for import...</pre>
+        </div>
+      </aside>
+
+      <section class="chat-shell">
+        <div class="card chat-card">
+          <div class="chat-header">
+            <div>
+              <h2>Conversation</h2>
+              <p class="chat-subtitle">Each answer is kept in the timeline together with the retrieved source snippets.</p>
+            </div>
+            <button id="clear-chat-btn" class="ghost">Clear Chat</button>
+          </div>
+
+          <div id="chat-history" class="chat-history">
+            <div class="empty-chat" id="empty-chat">
+              Import a PDF first, then start asking questions below.
+            </div>
+          </div>
+
+          <div class="chat-composer">
+            <textarea
+              id="question-input"
+              rows="3"
+              placeholder="Ask a question here..."
+            ></textarea>
+            <div class="composer-actions">
+              <span class="composer-tip">Enter to send, Shift + Enter for a new line</span>
+              <button id="ask-btn" class="primary">Send</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
+

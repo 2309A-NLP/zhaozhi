@@ -1,0 +1,60 @@
+# Python 3.10 runtime dependencies for rag_qa_system.
+
+# Backend stores and app configuration.
+setuptools<82
+pymysql>=1.1.0
+redis>=5.0.0
+pymilvus>=2.4.0
+python-dotenv>=1.0.1
+
+# RAG embeddings, reranking, and local model runtime.
+sentence-transformers>=2.6.0
+transformers>=4.40.0
+torch>=2.2.0
+accelerate>=0.29.0
+safetensors>=0.4.2
+
+# PDF text, layout, page rendering, and table extraction.
+pypdf>=4.0.0
+PyMuPDF>=1.24.0
+pdfplumber>=0.11.0
+pdfminer.six>=20231228
+# Camelot 1.x depends on pypdf<4 on Python 3.10.
+# Keep 0.11.x; use opencv-python-headless + system Ghostscript instead of the
+# "cv" extra, because that extra pulls pdftopng versions unavailable on some
+# Python 3.10/Windows package indexes.
+camelot-py>=0.11.0,<1.0.0
+ghostscript>=0.7
+tabula-py>=2.9.0
+
+# Image preprocessing and chart/figure region handling.
+Pillow>=10.0.0
+numpy>=1.24.0
+pandas>=2.0.0
+opencv-python-headless>=4.9.0.80
+scikit-image>=0.22.0
+matplotlib>=3.8.0
+jieba>=0.42.1
+
+# OCR for scanned PDFs and chart labels.
+# pytesseract requires the external Tesseract OCR executable.
+pytesseract>=0.3.13
+rapidocr-onnxruntime>=1.3.24
+onnxruntime>=1.17.0
+paddlepaddle>=2.6.0
+paddleocr>=2.7.0
+
+# Document layout analysis.
+layoutparser>=0.3.4
+unstructured[pdf]>=0.13.0
+
+# Multimodal/vision-model API clients for complex chart understanding.
+openai>=1.30.0
+httpx>=0.27.0
+requests>=2.31.0
+
+# External system tools still need to be installed separately, not by pip:
+# - Tesseract OCR with Chinese language data: chi_sim + eng
+# - Ghostscript: required by Camelot lattice/table extraction on many PDFs
+# - Java runtime: required by tabula-py
+# - Poppler: useful for some PDF/image workflows

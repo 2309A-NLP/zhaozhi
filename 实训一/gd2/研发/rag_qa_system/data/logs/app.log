@@ -1,0 +1,21 @@
+2026-05-26 09:36:12,137 | INFO | sentence_transformers.SentenceTransformer | Use pytorch device_name: cpu
+2026-05-26 09:36:12,137 | INFO | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: C:\Users\Administrator\Desktop\rgzn\zg3\mx\m3e-base
+2026-05-26 09:36:12,476 | INFO | numexpr.utils | Note: NumExpr detected 20 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2026-05-26 09:36:12,476 | INFO | numexpr.utils | NumExpr defaulting to 8 threads.
+2026-05-26 09:36:45,512 | INFO | sentence_transformers.SentenceTransformer | Use pytorch device_name: cpu
+2026-05-26 09:36:45,512 | INFO | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: C:\Users\Administrator\Desktop\rgzn\zg3\mx\m3e-base
+2026-05-26 09:36:45,879 | INFO | numexpr.utils | Note: NumExpr detected 20 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2026-05-26 09:36:45,879 | INFO | numexpr.utils | NumExpr defaulting to 8 threads.
+2026-05-29 10:59:02,643 | INFO | datasets | PyTorch version 2.5.1+cu118 available.
+2026-05-29 10:59:03,331 | INFO | sentence_transformers.SentenceTransformer | Use pytorch device_name: cuda:0
+2026-05-29 10:59:03,332 | INFO | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: C:\Users\Administrator\Desktop\rgzn\zg3\mx\m3e-base
+2026-05-29 10:59:04,339 | INFO | rag.main | server_start | host=127.0.0.1 | port=8000
+2026-05-29 10:59:05,586 | INFO | rag.http | http_request | method=GET | path=/
+2026-05-29 10:59:05,670 | INFO | rag.http | http_request | method=GET | path=/styles.css
+2026-05-29 10:59:05,670 | INFO | rag.http | http_request | method=GET | path=/app.js
+2026-05-29 10:59:05,712 | INFO | rag.http | http_request | method=GET | path=/api/files
+2026-05-29 10:59:05,715 | INFO | rag.http | http_request | method=GET | path=/api/stats
+2026-05-29 10:59:05,734 | INFO | rag.http | http_request | method=GET | path=/favicon.ico
+2026-05-29 10:59:24,407 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-29 10:59:25,924 | INFO | sentence_transformers.cross_encoder.CrossEncoder | Use pytorch device: cuda:0
+2026-05-29 10:59:33,095 | INFO | rag.answer | qa_success | question='武汉力源信息技术股份有限公司组织\n结构图中，销售部有几个部门构成，其中大客户销售部有几个\n销售处构成？' | duration_ms=8686.54 | source_count=3 | answer='根据现有知识库，无法完全确认武汉力源信息技术股份有限公司销售部的部门构成以及大客户销售部下属的销售处数量。\n\n依据：\n- 片段1和片段2提到销售部下设“渠道销售部、电话及网络销售部、大客户销售部和国”，但未明确列出所有部门，且“国”字不完整，无法确认完整构成。\n- 片段1和片段2提及大客户销售部，但未说明其下属销售处的数量或构成。'

@@ -1,0 +1,151 @@
+2026-05-26 09:36:12,137 | INFO | sentence_transformers.SentenceTransformer | Use pytorch device_name: cpu
+2026-05-26 09:36:12,137 | INFO | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: C:\Users\Administrator\Desktop\rgzn\zg3\mx\m3e-base
+2026-05-26 09:36:12,476 | INFO | numexpr.utils | Note: NumExpr detected 20 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2026-05-26 09:36:12,476 | INFO | numexpr.utils | NumExpr defaulting to 8 threads.
+2026-05-26 09:36:45,512 | INFO | sentence_transformers.SentenceTransformer | Use pytorch device_name: cpu
+2026-05-26 09:36:45,512 | INFO | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: C:\Users\Administrator\Desktop\rgzn\zg3\mx\m3e-base
+2026-05-26 09:36:45,879 | INFO | numexpr.utils | Note: NumExpr detected 20 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2026-05-26 09:36:45,879 | INFO | numexpr.utils | NumExpr defaulting to 8 threads.
+2026-05-28 22:11:53,817 | INFO | datasets | PyTorch version 2.5.1+cu118 available.
+2026-05-28 22:11:54,645 | INFO | sentence_transformers.SentenceTransformer | Use pytorch device_name: cuda:0
+2026-05-28 22:11:54,646 | INFO | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: C:\Users\Administrator\Desktop\rgzn\zg3\mx\m3e-base
+2026-05-28 22:11:56,002 | INFO | rag.main | server_start | host=127.0.0.1 | port=8000
+2026-05-28 22:11:58,083 | INFO | rag.http | http_request | method=GET | path=/
+2026-05-28 22:11:58,171 | INFO | rag.http | http_request | method=GET | path=/styles.css
+2026-05-28 22:11:58,172 | INFO | rag.http | http_request | method=GET | path=/app.js
+2026-05-28 22:11:58,240 | INFO | rag.http | http_request | method=GET | path=/api/files
+2026-05-28 22:11:58,243 | INFO | rag.http | http_request | method=GET | path=/api/stats
+2026-05-28 22:11:58,261 | INFO | rag.http | http_request | method=GET | path=/favicon.ico
+2026-05-28 22:12:03,214 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-28 22:12:04,919 | INFO | sentence_transformers.cross_encoder.CrossEncoder | Use pytorch device: cuda:0
+2026-05-28 22:12:07,656 | ERROR | rag.models | llm_http_error | status=402 | body={"error":{"message":"Insufficient Balance","type":"unknown_error","param":null,"code":"invalid_request_error"}}
+2026-05-28 22:12:07,656 | ERROR | rag.answer | qa_failed | question='武汉力源信息技术股份有限公司组织\n结构图中，销售部有几个部门构成，其中大客户销售部有几个\n销售处构成？' | duration_ms=4442.36
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\rgzn\rgzn\sx\sx1\gd\gd3\rag_qa_system\backend\services\answer_service.py", line 42, in answer
+    answer = self.llm_client.chat(messages)
+  File "C:\Users\Administrator\Desktop\rgzn\rgzn\sx\sx1\gd\gd3\rag_qa_system\backend\models\llm_client.py", line 61, in chat
+    raise last_error
+RuntimeError: LLM API returned HTTP 402
+2026-05-28 22:12:07,658 | ERROR | rag.http | http_failed | method=POST | path=/api/ask
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\rgzn\rgzn\sx\sx1\gd\gd3\rag_qa_system\backend\server.py", line 56, in do_POST
+    self._write_json(self.api.post_answer(payload), status=self._status_from_payload)
+  File "C:\Users\Administrator\Desktop\rgzn\rgzn\sx\sx1\gd\gd3\rag_qa_system\backend\api\http_api.py", line 17, in post_answer
+    return self.qa_controller.handle_question(payload.get("question", ""))
+  File "C:\Users\Administrator\Desktop\rgzn\rgzn\sx\sx1\gd\gd3\rag_qa_system\backend\controllers\qa_controller.py", line 23, in handle_question
+    return self.answer_service.answer(question)
+  File "C:\Users\Administrator\Desktop\rgzn\rgzn\sx\sx1\gd\gd3\rag_qa_system\backend\services\answer_service.py", line 42, in answer
+    answer = self.llm_client.chat(messages)
+  File "C:\Users\Administrator\Desktop\rgzn\rgzn\sx\sx1\gd\gd3\rag_qa_system\backend\models\llm_client.py", line 61, in chat
+    raise last_error
+RuntimeError: LLM API returned HTTP 402
+2026-05-28 22:13:52,836 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-28 22:13:54,944 | INFO | rag.answer | qa_success | question='Traceback (most recent call last):\n  File "C:\\Users\\Administrator\\Desktop\\rgzn\\rgzn\\sx\\sx1\\gd\\gd3\\rag_qa_system\\backend\\services\\answer_service.py", line 42, in answer\n    answer = self.llm_client.chat(messages)\n  File "C:\\Users\\Administrator\\Desktop\\rgzn\\rgzn\\sx\\sx1\\gd\\gd3\\rag_qa_system\\backend\\models\\llm_client.py", line 61, in chat\n    raise last_error\nRuntimeError: LLM API returned HTTP 402\n2026-05-28 22:12:07,658 | ERROR | rag.http | http_failed | method=POST | path=/api/ask\nTraceback (most recent call last):\n  File "C:\\Users\\Administrator\\Desktop\\rgzn\\rgzn\\sx\\sx1\\gd\\gd3\\rag_qa_system\\backend\\server.py", line 56, in do_POST\n    self._write_json(self.api.post_answer(payload), status=self._status_from_payload)\n  File "C:\\Users\\Administrator\\Desktop\\rgzn\\rgzn\\sx\\sx1\\gd\\gd3\\rag_qa_system\\backend\\api\\http_api.py", line 17, in post_answer\n    return self.qa_controller.handle_question(payload.get("question", ""))\n  File "C:\\Users\\Administrator\\Desktop\\rgzn\\rgzn\\sx\\sx1\\gd\\gd3\\rag_qa_system\\backend\\controllers\\qa_controller.py", line 23, in handle_question\n    return self.answer_service.answer(question)\n  File "C:\\Users\\Administrator\\Desktop\\rgzn\\rgzn\\sx\\sx1\\gd\\gd3\\rag_qa_system\\backend\\services\\answer_service.py", line 42, in answer\n    answer = self.llm_client.chat(messages)\n  File "C:\\Users\\Administrator\\Desktop\\rgzn\\rgzn\\sx\\sx1\\gd\\gd3\\rag_qa_system\\backend\\models\\llm_client.py", line 61, in chat\n    raise last_error\nRuntimeError: LLM API returned HTTP 402' | duration_ms=2106.15 | source_count=3 | answer='无法根据知识库确认。\n\n依据：\n- 片段1、2、3均不包含与用户问题中Python报错、HTTP 402错误或系统调用相关的任何信息。'
+2026-05-28 22:14:03,083 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-28 22:14:05,760 | INFO | rag.answer | qa_success | question='武汉力源信息技术股份有限公司组织\n结构图中，销售部有几个部门构成，其中大客户销售部有几个\n销售处构成？' | duration_ms=2676.28 | source_count=3 | answer='根据现有知识库，无法确认大客户销售部由几个销售处构成。\n\n依据：\n- 片段1和片段2提到销售部下设渠道销售部、电话及网络销售部、大客户销售部和国（内容不完整），但未说明大客户销售部内部是否进一步划分为销售处及其数量。\n- 片段3仅提及大客户销售的流程图，未提供组织结构细节。'
+2026-05-28 22:14:14,374 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-28 22:14:16,330 | INFO | rag.answer | qa_success | question='武汉力源信息技术股份有限公司组织\n结构图中，销售部有几个部门构成，其中大客户销售部有几个\n销售处构成？' | duration_ms=1955.87 | source_count=3 | answer='根据现有片段，无法确定大客户销售部由几个销售处构成。\n\n依据：\n- 片段1和片段2显示销售部下设渠道销售部、电话及网络销售部、大客户销售部和国（此处内容不完整），但未提及大客户销售部内部是否有销售处及其数量。\n- 片段3仅提到大客户销售的流程图，未提供具体构成信息。'
+2026-05-28 22:14:38,741 | INFO | datasets | PyTorch version 2.5.1+cu118 available.
+2026-05-28 22:14:39,468 | INFO | sentence_transformers.SentenceTransformer | Use pytorch device_name: cuda:0
+2026-05-28 22:14:39,468 | INFO | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: C:\Users\Administrator\Desktop\rgzn\zg3\mx\m3e-base
+2026-05-28 22:14:40,570 | INFO | rag.main | server_start | host=127.0.0.1 | port=8000
+2026-05-28 22:14:41,704 | INFO | rag.http | http_request | method=GET | path=/
+2026-05-28 22:14:41,785 | INFO | rag.http | http_request | method=GET | path=/styles.css
+2026-05-28 22:14:41,785 | INFO | rag.http | http_request | method=GET | path=/app.js
+2026-05-28 22:14:41,826 | INFO | rag.http | http_request | method=GET | path=/api/files
+2026-05-28 22:14:41,829 | INFO | rag.http | http_request | method=GET | path=/api/stats
+2026-05-28 22:14:41,847 | INFO | rag.http | http_request | method=GET | path=/favicon.ico
+2026-05-28 22:14:45,652 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-28 22:14:47,805 | INFO | rag.answer | qa_success | question='武汉力源信息技术股份有限公司组织\n结构图中，销售部有几个部门构成，其中大客户销售部有几个\n销售处构成？' | duration_ms=2150.78 | source_count=3 | answer='根据现有片段，无法确认销售部由几个部门构成，也无法确认大客户销售部由几个销售处构成。依据的片段中仅提及销售部下设渠道销售部、电话及网络销售部、大客户销售部和国（片段2），以及大客户销售部的流程图（片段3），但未明确部门总数或大客户销售部的具体内部分支数量。\n\n依据片段：片段2、片段3'
+2026-05-28 22:16:21,703 | INFO | datasets | PyTorch version 2.5.1+cu118 available.
+2026-05-28 22:16:22,533 | INFO | sentence_transformers.SentenceTransformer | Use pytorch device_name: cuda:0
+2026-05-28 22:16:22,533 | INFO | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: C:\Users\Administrator\Desktop\rgzn\zg3\mx\m3e-base
+2026-05-28 22:16:23,518 | INFO | rag.main | server_start | host=127.0.0.1 | port=8000
+2026-05-28 22:16:29,779 | INFO | rag.http | http_request | method=GET | path=/
+2026-05-28 22:16:29,788 | INFO | rag.http | http_request | method=GET | path=/styles.css
+2026-05-28 22:16:29,789 | INFO | rag.http | http_request | method=GET | path=/app.js
+2026-05-28 22:16:29,834 | INFO | rag.http | http_request | method=GET | path=/api/files
+2026-05-28 22:16:29,837 | INFO | rag.http | http_request | method=GET | path=/api/stats
+2026-05-28 22:16:29,850 | INFO | rag.http | http_request | method=GET | path=/favicon.ico
+2026-05-28 22:16:39,991 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-28 22:16:41,454 | INFO | sentence_transformers.cross_encoder.CrossEncoder | Use pytorch device: cuda:0
+2026-05-28 22:16:45,324 | INFO | rag.answer | qa_success | question='"武汉力源信息技术股份有限公司组织\n结构图中，销售部有几个部门构成，其中大客户销售部有几个\n销售处构成？' | duration_ms=5330.47 | source_count=3 | answer='根据现有知识库，无法确认武汉力源信息技术股份有限公司销售部由几个部门构成，也无法确认大客户销售部由几个销售处构成。\n\n依据：\n- 片段1、片段2、片段3仅提到销售部下设渠道销售部、电话及网络销售部、大客户销售部，但未说明销售部的部门总数，也未提及大客户销售部下设的销售处数量。'
+2026-05-28 22:16:49,913 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-28 22:16:51,322 | INFO | rag.answer | qa_success | question='"武汉力源信息技术股份有限公司组织\n结构图中，销售部有几个部门构成，其中大客户销售部有几个\n销售处构成？' | duration_ms=1408.16 | source_count=3 | answer='根据现有知识库，无法确认大客户销售部由几个销售处构成。\n\n依据：片段1和片段2仅提及销售部下设渠道销售部、电话及网络销售部、大客户销售部，未说明大客户销售部内部是否设有销售处及其数量。'
+2026-05-29 09:34:54,226 | INFO | datasets | PyTorch version 2.5.1+cu118 available.
+2026-05-29 09:34:55,078 | INFO | sentence_transformers.SentenceTransformer | Use pytorch device_name: cuda:0
+2026-05-29 09:34:55,078 | INFO | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: C:\Users\Administrator\Desktop\rgzn\zg3\mx\m3e-base
+2026-05-29 09:34:56,287 | INFO | rag.main | server_start | host=127.0.0.1 | port=8000
+2026-05-29 09:34:57,538 | INFO | rag.http | http_request | method=GET | path=/
+2026-05-29 09:34:57,609 | INFO | rag.http | http_request | method=GET | path=/styles.css
+2026-05-29 09:34:57,609 | INFO | rag.http | http_request | method=GET | path=/app.js
+2026-05-29 09:34:57,619 | INFO | rag.http | http_request | method=GET | path=/api/files
+2026-05-29 09:34:57,621 | INFO | rag.http | http_request | method=GET | path=/api/stats
+2026-05-29 09:35:04,101 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-29 09:35:06,167 | INFO | sentence_transformers.cross_encoder.CrossEncoder | Use pytorch device: cuda:0
+2026-05-29 09:35:10,150 | INFO | rag.answer | qa_success | question='武汉力源信息技术股份有限公司组织\n结构图中，销售部有几个部门构成，其中大客户销售部有几个\n销售处构成？' | duration_ms=6039.74 | source_count=3 | answer='根据已有片段，无法确认大客户销售部由几个销售处构成。\n\n依据：\n- 片段1和片段2显示销售部下设渠道销售部、电话及网络销售部、大客户销售部和国（内容不完整），但未提及大客户销售部内部是否有销售处及其数量。\n- 片段3仅提到大客户销售的流程图，未提供具体部门构成信息。'
+2026-05-29 09:40:11,576 | INFO | datasets | PyTorch version 2.5.1+cu118 available.
+2026-05-29 09:40:12,461 | INFO | sentence_transformers.SentenceTransformer | Use pytorch device_name: cuda:0
+2026-05-29 09:40:12,461 | INFO | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: C:\Users\Administrator\Desktop\rgzn\zg3\mx\m3e-base
+2026-05-29 09:40:13,803 | INFO | rag.main | server_start | host=127.0.0.1 | port=8000
+2026-05-29 09:40:15,691 | INFO | rag.http | http_request | method=GET | path=/
+2026-05-29 09:40:15,812 | INFO | rag.http | http_request | method=GET | path=/styles.css
+2026-05-29 09:40:15,814 | INFO | rag.http | http_request | method=GET | path=/app.js
+2026-05-29 09:40:15,855 | INFO | rag.http | http_request | method=GET | path=/api/files
+2026-05-29 09:40:15,857 | INFO | rag.http | http_request | method=GET | path=/api/stats
+2026-05-29 09:40:15,874 | INFO | rag.http | http_request | method=GET | path=/favicon.ico
+2026-05-29 09:40:32,010 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-29 09:40:32,437 | ERROR | rag.models | llm_http_error | status=400 | body={"code":20012,"message":"Model does not exist. Please check it carefully.","data":null}
+2026-05-29 09:40:32,437 | ERROR | rag.answer | qa_failed | question='武汉力源信息技术股份有限公司组织\n结构图中，销售部有几个部门构成，其中大客户销售部有几个\n销售处构成？' | duration_ms=427.46
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\rgzn\rgzn\sx\sx1\gd\gd3\rag_qa_system\backend\services\answer_service.py", line 42, in answer
+    answer = self.llm_client.chat(messages)
+  File "C:\Users\Administrator\Desktop\rgzn\rgzn\sx\sx1\gd\gd3\rag_qa_system\backend\models\llm_client.py", line 61, in chat
+    raise last_error
+RuntimeError: LLM API returned HTTP 400
+2026-05-29 09:40:32,450 | ERROR | rag.http | http_failed | method=POST | path=/api/ask
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\rgzn\rgzn\sx\sx1\gd\gd3\rag_qa_system\backend\server.py", line 56, in do_POST
+    self._write_json(self.api.post_answer(payload), status=self._status_from_payload)
+  File "C:\Users\Administrator\Desktop\rgzn\rgzn\sx\sx1\gd\gd3\rag_qa_system\backend\api\http_api.py", line 17, in post_answer
+    return self.qa_controller.handle_question(payload.get("question", ""))
+  File "C:\Users\Administrator\Desktop\rgzn\rgzn\sx\sx1\gd\gd3\rag_qa_system\backend\controllers\qa_controller.py", line 23, in handle_question
+    return self.answer_service.answer(question)
+  File "C:\Users\Administrator\Desktop\rgzn\rgzn\sx\sx1\gd\gd3\rag_qa_system\backend\services\answer_service.py", line 42, in answer
+    answer = self.llm_client.chat(messages)
+  File "C:\Users\Administrator\Desktop\rgzn\rgzn\sx\sx1\gd\gd3\rag_qa_system\backend\models\llm_client.py", line 61, in chat
+    raise last_error
+RuntimeError: LLM API returned HTTP 400
+2026-05-29 09:41:58,801 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-29 09:41:59,422 | ERROR | rag.models | llm_http_error | status=400 | body={"code":20012,"message":"Model does not exist. Please check it carefully.","data":null}
+2026-05-29 09:41:59,422 | ERROR | rag.answer | qa_failed | question='武汉力源信息技术股份有限公司组织\n结构图中，销售部有几个部门构成，其中大客户销售部有几个\n销售处构成？' | duration_ms=619.96
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\rgzn\rgzn\sx\sx1\gd\gd3\rag_qa_system\backend\services\answer_service.py", line 42, in answer
+    answer = self.llm_client.chat(messages)
+  File "C:\Users\Administrator\Desktop\rgzn\rgzn\sx\sx1\gd\gd3\rag_qa_system\backend\models\llm_client.py", line 61, in chat
+    raise last_error
+RuntimeError: LLM API returned HTTP 400
+2026-05-29 09:41:59,423 | ERROR | rag.http | http_failed | method=POST | path=/api/ask
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\rgzn\rgzn\sx\sx1\gd\gd3\rag_qa_system\backend\server.py", line 56, in do_POST
+    self._write_json(self.api.post_answer(payload), status=self._status_from_payload)
+  File "C:\Users\Administrator\Desktop\rgzn\rgzn\sx\sx1\gd\gd3\rag_qa_system\backend\api\http_api.py", line 17, in post_answer
+    return self.qa_controller.handle_question(payload.get("question", ""))
+  File "C:\Users\Administrator\Desktop\rgzn\rgzn\sx\sx1\gd\gd3\rag_qa_system\backend\controllers\qa_controller.py", line 23, in handle_question
+    return self.answer_service.answer(question)
+  File "C:\Users\Administrator\Desktop\rgzn\rgzn\sx\sx1\gd\gd3\rag_qa_system\backend\services\answer_service.py", line 42, in answer
+    answer = self.llm_client.chat(messages)
+  File "C:\Users\Administrator\Desktop\rgzn\rgzn\sx\sx1\gd\gd3\rag_qa_system\backend\models\llm_client.py", line 61, in chat
+    raise last_error
+RuntimeError: LLM API returned HTTP 400
+2026-05-29 10:04:12,335 | INFO | datasets | PyTorch version 2.5.1+cu118 available.
+2026-05-29 10:04:12,945 | INFO | sentence_transformers.SentenceTransformer | Use pytorch device_name: cuda:0
+2026-05-29 10:04:12,945 | INFO | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: C:\Users\Administrator\Desktop\rgzn\zg3\mx\m3e-base
+2026-05-29 10:04:13,683 | INFO | rag.main | server_start | host=127.0.0.1 | port=8000
+2026-05-29 10:04:14,570 | INFO | rag.http | http_request | method=GET | path=/
+2026-05-29 10:04:14,608 | INFO | rag.http | http_request | method=GET | path=/styles.css
+2026-05-29 10:04:14,609 | INFO | rag.http | http_request | method=GET | path=/app.js
+2026-05-29 10:04:14,647 | INFO | rag.http | http_request | method=GET | path=/api/files
+2026-05-29 10:04:14,649 | INFO | rag.http | http_request | method=GET | path=/api/stats
+2026-05-29 10:04:20,379 | INFO | rag.http | http_request | method=POST | path=/api/ask
+2026-05-29 10:04:23,920 | INFO | rag.answer | qa_success | question='武汉力源信息技术股份有限公司组织\n结构图中，销售部有几个部门构成，其中大客户销售部有几个\n销售处构成？' | duration_ms=3539.31 | source_count=3 | answer='根据现有片段，无法完全确认武汉力源信息技术股份有限公司销售部的部门构成数量，以及大客户销售部下的销售处数量。\n\n依据：\n- 片段1和片段2提到销售部下设“渠道销售部、电话及网络销售部、大客户销售部和国”（“国”字可能为不完整信息），但未明确列出所有部门总数。\n- 所有片段均未提及大客户销售部内部是否设有销售处，或具体有几个销售处。'
