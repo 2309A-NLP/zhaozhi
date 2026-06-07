@@ -22,7 +22,6 @@ from rag_qa_system.backend.models.llm_client import (
     PdfVisionChartClient,
     RerankerClient,
 )
-
 from rag_qa_system.backend.repositories.milvus_repo import MilvusRepository
 from rag_qa_system.backend.repositories.mysql_repo import MysqlRepository
 from rag_qa_system.backend.repositories.redis_repo import RedisRepository
@@ -55,12 +54,10 @@ def build_api(config: AppConfig | None = None) -> tuple[HttpApi, AppConfig]:
         password=config.mysql_password,
         database=config.mysql_database,
     )
-
     embedding_client = EmbeddingClient(
         model_path=config.embedding_model_path,
         expected_dim=config.embedding_dim,
     )
-
     milvus_repo = MilvusRepository(
         host=config.milvus_host,
         port=config.milvus_port,
@@ -68,18 +65,15 @@ def build_api(config: AppConfig | None = None) -> tuple[HttpApi, AppConfig]:
         collection_name=config.milvus_collection_name,
         embedding_dim=embedding_client.dimension,
     )
-
     redis_repo = RedisRepository(
         host=config.redis_host,
         port=config.redis_port,
         password=config.redis_password,
     )
-
     reranker_client = RerankerClient(
         model_path=config.reranker_model_path,
         enabled=config.enable_flag_reranker,
     )
-
     llm_client = LLMClient(
         base_url=config.llm_base_url,
         api_key=config.llm_api_key,
@@ -90,7 +84,6 @@ def build_api(config: AppConfig | None = None) -> tuple[HttpApi, AppConfig]:
         timeout_seconds=config.llm_timeout_seconds,
         enable_thinking=config.llm_enable_thinking,
     )
-
     parser_mode = config.pdf_parser_mode.strip().lower()
     pdf_cleanup_client = None
     if parser_mode in {"hybrid", "llm", "auto"} and config.pdf_llm_api_key:
@@ -108,7 +101,6 @@ def build_api(config: AppConfig | None = None) -> tuple[HttpApi, AppConfig]:
             chunk_chars=config.pdf_llm_chunk_chars,
             chunk_overlap=config.pdf_llm_chunk_overlap,
         )
-
     elif parser_mode in {"hybrid", "llm", "auto"}:
         LOGGER.warning("pdf_llm_disabled | reason=missing_api_key | mode=%s", config.pdf_parser_mode)
 
@@ -126,7 +118,6 @@ def build_api(config: AppConfig | None = None) -> tuple[HttpApi, AppConfig]:
                 enable_thinking=None,
             )
         )
-
     elif parser_mode in {"vision_hybrid", "auto"}:
         LOGGER.warning("pdf_vision_disabled | reason=missing_api_key | mode=%s", config.pdf_parser_mode)
 
@@ -141,7 +132,6 @@ def build_api(config: AppConfig | None = None) -> tuple[HttpApi, AppConfig]:
         hybrid_rrf_k=config.hybrid_rrf_k,
         cache_ttl_seconds=config.short_term_ttl,
     )
-
     answer_service = AnswerService(
         retrieval_service=retrieval_service,
         prompt_service=PromptService(context_doc_char_limit=config.context_doc_char_limit),
@@ -149,7 +139,6 @@ def build_api(config: AppConfig | None = None) -> tuple[HttpApi, AppConfig]:
         mysql_repo=mysql_repo,
         top_k=config.rerank_top_k,
     )
-
     knowledge_service = KnowledgeService(
         project_root=config.project_root,
         pdf_dir=config.pdf_dir,
@@ -157,6 +146,7 @@ def build_api(config: AppConfig | None = None) -> tuple[HttpApi, AppConfig]:
         mysql_repo=mysql_repo,
         milvus_repo=milvus_repo,
         redis_repo=redis_repo,
+        cache_invalidator=retrieval_service.clear_runtime_cache,
         max_upload_bytes=config.max_upload_bytes,
         ingestor=KnowledgeIngestor(
             parser=PdfParser(
@@ -175,12 +165,10 @@ def build_api(config: AppConfig | None = None) -> tuple[HttpApi, AppConfig]:
             milvus_repo=milvus_repo,
         ),
     )
-
     api = HttpApi(
         qa_controller=QAController(answer_service=answer_service),
         knowledge_controller=KnowledgeController(knowledge_service=knowledge_service),
     )
-
     return api, config
 
 
@@ -193,7 +181,6 @@ def run_server(host: str, port: int) -> None:
         frontend_dir=config.frontend_dir,
         max_request_body_bytes=config.max_request_body_bytes,
     )
-
     LOGGER.info("server_start | host=%s | port=%s", host, port)
     print(f"Server running at http://{host}:{port}")
     server.serve_forever()

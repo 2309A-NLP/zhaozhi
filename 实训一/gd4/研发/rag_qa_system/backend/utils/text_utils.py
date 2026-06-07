@@ -55,7 +55,7 @@ def split_tokens(text: str) -> List[str]:
         chinese_tokens.extend(_segment_chinese(sequence))
         chinese_tokens.extend(_sequence_ngrams(sequence))
 
-    return _deduplicate_preserve_order(latin_tokens + chinese_tokens)
+    return latin_tokens + chinese_tokens
 
 
 def _segment_chinese(sequence: str) -> List[str]:

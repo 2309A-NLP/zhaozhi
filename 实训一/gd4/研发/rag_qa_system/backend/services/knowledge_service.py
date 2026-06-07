@@ -7,7 +7,7 @@ import binascii
 import uuid
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Dict, List
+from typing import Callable, Dict, List
 
 from rag_qa_system.backend.repositories.mysql_repo import MysqlRepository
 from rag_qa_system.backend.repositories.milvus_repo import MilvusRepository
@@ -29,6 +29,7 @@ class KnowledgeService:
     milvus_repo: MilvusRepository
     ingestor: KnowledgeIngestor
     redis_repo: RedisRepository | None = None
+    cache_invalidator: Callable[[], None] | None = None
     max_upload_bytes: int = 50 * 1024 * 1024
 
     def list_available_pdfs(self) -> List[Dict[str, str]]:
@@ -106,6 +107,12 @@ class KnowledgeService:
         return ""
 
     def _invalidate_retrieval_cache(self) -> None:
+        if self.cache_invalidator is not None:
+            try:
+                self.cache_invalidator()
+                LOGGER.info("retrieval_runtime_cache_invalidated")
+            except Exception:
+                LOGGER.exception("retrieval_runtime_cache_invalidate_failed")
         if self.redis_repo is None:
             return
         try:

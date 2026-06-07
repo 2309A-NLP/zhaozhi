@@ -30,10 +30,12 @@ class KnowledgeIngestor:
         file_bytes = path.read_bytes()
         if not file_bytes.startswith(b"%PDF-"):
             raise ValueError(f"File is not a valid PDF: {path.name}")
+
         text = self.parser.parse(str(path))
         chunks = self.chunker.split(text)
         if not chunks:
             raise ValueError(f"No text chunks produced from PDF: {path.name}")
+
         document_id = hashlib.md5(file_bytes).hexdigest()
         document_name = (display_name or path.name).strip() or path.name
         vectors = self.embedding_client.embed_batch(chunks)
@@ -76,7 +78,13 @@ class KnowledgeIngestor:
         }
 
     def _detect_content_type(self, text: str) -> str:
-        if "[PDF图表视觉解析]" in text or "[PDF图表OCR解析]" in text:
+        if (
+            "[PDF图表视觉解析]" in text
+            or "[PDF图表OCR解析]" in text
+            or "[PDF组织结构解析]" in text
+            or "组织结构关系：" in text
+            or "上下级关系：" in text
+        ):
             return "chart"
         if "|" in text and "\n" in text:
             return "table"

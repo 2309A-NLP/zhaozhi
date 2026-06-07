@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-import math
 import hashlib
+import math
 import re
 from collections import Counter
 from dataclasses import dataclass, field
@@ -29,6 +29,9 @@ class RetrievalService:
     cache_ttl_seconds: int = 3600
     _bm25_cache: Dict[tuple[str, int], Dict[str, object]] = field(default_factory=dict, init=False, repr=False)
 
+    def clear_runtime_cache(self) -> None:
+        self._bm25_cache.clear()
+
     def retrieve(self, question: str, top_k: int = 5, document_id: str = "") -> List[Dict[str, str]]:
         effective_top_k = top_k or self.rerank_top_k
         scoped_document_id = document_id.strip()
@@ -41,24 +44,27 @@ class RetrievalService:
         cached = self.redis_repo.get(cache_key)
         if cached:
             return cached
+
         vector = self.embedding_client.embed(question)
+        branch_top_k = max(self.retrieval_top_k, effective_top_k)
         gd4_hits = self._retrieve_gd4_style(
             question=question,
             vector=vector,
-            top_k=max(self.retrieval_top_k, effective_top_k),
+            top_k=branch_top_k,
             document_id=scoped_document_id,
         )
         gd1_hits = self._retrieve_gd1_style(
             question=question,
             vector=vector,
-            top_k=max(self.retrieval_top_k, effective_top_k),
+            top_k=branch_top_k,
             document_id=scoped_document_id,
         )
         chart_hits = self._retrieve_chart_direct(
             question=question,
-            top_k=max(self.retrieval_top_k, effective_top_k),
+            top_k=branch_top_k,
             document_id=scoped_document_id,
         )
+
         hits = self._merge_many_branch_hits(gd4_hits, gd1_hits, chart_hits)
         reranked = self.reranker_client.rerank(
             question=question,
@@ -67,6 +73,7 @@ class RetrievalService:
         )
         if self._question_prefers_chart(question):
             reranked = self._preserve_priority_hits(reranked, chart_hits, max(self.rerank_top_k, effective_top_k))
+
         results = [
             {
                 "chunk_id": item["chunk_id"],
@@ -159,8 +166,8 @@ class RetrievalService:
         average_document_length = float(bm25_index["average_document_length"])
         if total_documents == 0:
             return []
-        scored_hits: List[Dict[str, object]] = []
 
+        scored_hits: List[Dict[str, object]] = []
         for chunk, tokens in chunk_token_rows:
             token_counts = Counter(tokens)
             score = self._bm25_score(
@@ -173,6 +180,7 @@ class RetrievalService:
             )
             if score <= 0:
                 continue
+
             content_type = str(chunk.get("content_type", "text"))
             if content_type == "chart" and self._question_prefers_chart(question):
                 score *= 3.0
@@ -254,12 +262,15 @@ class RetrievalService:
                 "柱状图",
                 "直方图",
                 "增长率",
+                "负增长",
                 "占比",
                 "比例",
                 "结构",
                 "组织",
                 "销售处",
                 "销售部",
+                "下设",
+                "构成",
             )
         )
 
@@ -271,34 +282,39 @@ class RetrievalService:
             for marker in (
                 "[PDF图表视觉解析]",
                 "[PDF图表OCR解析]",
+                "[PDF组织结构解析]",
                 "图表标题",
                 "图表类型",
                 "饼图数据",
                 "柱状图/直方图数据",
                 "增长率数据",
                 "增长率极值",
+                "组织结构图",
                 "组织结构关系",
-                "上下级边关系",
+                "上下级关系",
+                "下设",
             )
         )
 
     def _chart_direct_score(self, question: str, question_tokens: set[str], text: str) -> float:
-        score = overlap_score(question, text) * 10.0
+        score = overlap_score(question, text) * 12.0
         for token in question_tokens:
             if token and token in text:
                 score += 1.0
-        if "增长率" in question and "增长率" in text:
-            score += 8.0
-        if "2008" in question and "2008" in text:
-            score += 5.0
-        if "IC" in question.upper() and "IC" in text.upper():
-            score += 4.0
-        if "组织" in question and "组织结构" in text:
-            score += 5.0
-        if "大客户销售部" in question and "大客户销售部" in text:
-            score += 5.0
-        if "销售处" in question and "销售处" in text:
-            score += 5.0
+
+        if any(keyword in question for keyword in ("增长率", "占比", "比例", "最快", "最高", "最低", "负增长")):
+            if any(marker in text for marker in ("增长率", "增长率数据", "增长率极值", "占比", "比例")):
+                score += 6.0
+            if re.search(r"-?\d+(?:\.\d+)?\s*[%％]", text):
+                score += 4.0
+
+        if any(keyword in question for keyword in ("组织", "结构", "下设", "构成")):
+            if any(marker in text for marker in ("组织结构图", "组织结构关系", "上下级关系", "->", "下设")):
+                score += 6.0
+
+        for year in re.findall(r"(?:19|20)\d{2}", question):
+            if year in text:
+                score += 2.0
         return score
 
     def _fuse_ranked_hits(
@@ -375,7 +391,8 @@ class RetrievalService:
         if not priority_hits:
             return reranked
         merged: Dict[str, Dict[str, object]] = {}
-        for hit in priority_hits[:2] + reranked:
+        priority_cap = min(3, max(1, top_k))
+        for hit in priority_hits[:priority_cap] + reranked:
             chunk_id = str(hit.get("chunk_id", "")).strip()
             if not chunk_id or chunk_id in merged:
                 continue

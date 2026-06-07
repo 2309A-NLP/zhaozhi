@@ -103,7 +103,7 @@ class AppConfig:
         default_factory=lambda: os.getenv("LLM_BASE_URL", "https://api.siliconflow.cn/v1/chat/completions")
     )
     llm_api_key: str = field(default_factory=lambda: os.getenv("LLM_API_KEY", os.getenv("DEEPSEEK_API_KEY", "")))
-    llm_model: str = field(default_factory=lambda: os.getenv("LLM_MODEL", "Pro/zai-org/GLM-4.7"))
+    llm_model: str = field(default_factory=lambda: os.getenv("LLM_MODEL", "deepseek-chat"))
     llm_max_tokens: int = field(default_factory=lambda: load_int("LLM_MAX_TOKENS", 512, minimum=1))
     llm_temperature: float = field(default_factory=lambda: load_float("LLM_TEMPERATURE", 0.5, minimum=0.0))
     llm_max_retries: int = field(default_factory=lambda: load_int("LLM_MAX_RETRIES", 1, minimum=1))

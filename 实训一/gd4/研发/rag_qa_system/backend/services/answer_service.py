@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import time
 from dataclasses import dataclass
-from typing import Dict, List
+from typing import Dict
 
 from rag_qa_system.backend.models.llm_client import LLMClient
 from rag_qa_system.backend.repositories.mysql_repo import MysqlRepository
