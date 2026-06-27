@@ -1,0 +1,12 @@
+.env
+__pycache__/
+.DS_Store
+.venv/
+.uv-cache/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+coverage/
+dist/
+build/

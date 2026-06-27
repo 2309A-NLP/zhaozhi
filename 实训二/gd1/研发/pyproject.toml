@@ -1,0 +1,28 @@
+[project]
+name = "gd"
+version = "0.1.0"
+description = "gd using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[tools]==1.14.7",
+    "litellm>=1.84",
+    "openai>=1.30.0",
+    "pymysql>=1.1.1",
+    "python-dotenv>=1.0.1"
+]
+
+[project.scripts]
+gd = "gd.main:run"
+run_crew = "gd.main:run"
+train = "gd.main:train"
+replay = "gd.main:replay"
+test = "gd.main:test"
+run_with_trigger = "gd.main:run_with_trigger"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"

@@ -1,0 +1,64 @@
+schedule_sql_task:
+  description: >
+    当前真实北京时间：{current_beijing_time}
+    用户原始输入：{user_request}
+
+    你的任务是把这句中文私人秘书指令转换成结构化 SQL 方案。
+    你只允许识别四种操作：
+    1. add：新增日程
+    2. delete：按标题和时间删除日程
+    3. query：查询日程
+    4. delete_by_id：按列表里的 id 取消日程，例如“取消日程 1”
+
+    你必须严格遵守以下规则：
+    1. 只操作 MySQL 数据库 agent 中的 gd2 表。
+    2. 只允许输出四种 SQL 模板之一，不能改表名、字段名、参数顺序。
+    3. 时间必须全部解析为北京时间，并格式化为 YYYY-MM-DD HH:MM:SS。
+    4. 对口语、模糊、复杂表达进行合理解析，例如“明天下午三点”“下周一早上九点半”“今晚八点”“查询今天的日程”“取消日程 1”。
+    5. 如果用户没有写分钟，则默认分钟为 00；如果没有写秒，则默认秒为 00。
+    6. add 和 delete 的标题 title 必须简洁准确，例如“开会”“拜访客户”“体检”“交报告”。
+    7. query 和 delete_by_id 的 title 可以为空。
+    8. normalized_request 必须写成清晰中文。
+    9. summary 需要给出一句简短中文说明。
+
+    允许的 SQL 模板只有以下四种：
+
+    add:
+    INSERT INTO gd2 (title, schedule_time, raw_request, normalized_request, timezone)
+    VALUES (%s, %s, %s, %s, %s)
+    ON DUPLICATE KEY UPDATE
+    raw_request = VALUES(raw_request),
+    normalized_request = VALUES(normalized_request),
+    timezone = VALUES(timezone),
+    updated_at = CURRENT_TIMESTAMP
+
+    delete:
+    DELETE FROM gd2 WHERE title = %s AND schedule_time = %s
+
+    delete_by_id:
+    DELETE FROM gd2 WHERE id = %s
+
+    query_day:
+    SELECT id, title, schedule_time, normalized_request, timezone, created_at, updated_at
+    FROM gd2 WHERE DATE(schedule_time) = %s ORDER BY schedule_time ASC
+
+    query_all:
+    SELECT id, title, schedule_time, normalized_request, timezone, created_at, updated_at
+    FROM gd2 ORDER BY schedule_time ASC
+
+    参数规则：
+    1. add 的 params 必须严格为 [title, schedule_time, user_request, normalized_request, "Asia/Shanghai"]
+    2. delete 的 params 必须严格为 [title, schedule_time]
+    3. delete_by_id 的 params 必须严格为 [id字符串]
+    4. query 查询某一天时，params 必须严格为 [YYYY-MM-DD]
+    5. query 查询全部时，params 必须严格为 []
+    6. query 如果是按天查询，schedule_time 必须填写该天的 00:00:00，例如 2026-06-15 00:00:00
+    7. query 如果是查询全部，schedule_time 必须为空字符串
+    8. delete_by_id 的 schedule_time 必须为空字符串
+    9. sql 必须和模板完全一致，只允许空白符不同
+
+  expected_output: >
+    只输出一个合法 JSON 对象，不要输出 markdown，不要输出解释文字，不要输出代码块。
+    JSON 字段必须包括：
+    action、title、schedule_time、normalized_request、sql、params、summary。
+  agent: secretary_sql_planner
